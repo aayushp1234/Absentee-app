@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/landing_page.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Absentees!</h1>
+        <div class="menu">
+            <a href="{% url 'student_form' %}" class="btn">Student Form</a>
+            <a href="{% url 'display_names' %}" class="btn">Display Names</a>
+        </div>
+    </div>
+</body>
+</html>

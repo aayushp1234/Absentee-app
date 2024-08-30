@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students List</title>
+    <link rel="stylesheet" href="{% static 'css/display_names.css' %}">
+</head>
+<body>
+    <h1>List of Students</h1>
+    <form method="post" action="{% url 'send_sms_to_selected_students' %}">
+        {% csrf_token %}
+        <ul>
+            {% for student in students %}
+                <li>
+                    <input type="checkbox" name="selected_students" value="{{ student.id }}">
+                    <label>{{ student.name }}</label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

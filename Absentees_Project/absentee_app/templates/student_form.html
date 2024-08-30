@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/student_form.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="{% url 'submit_student_form' %}" class="form-container">
+            {% csrf_token %}
+            <h1>Student Information Form</h1>
+            <label for="id_name">Name:</label>
+            <input type="text" id="id_name" name="name" required>
+
+            <label for="id_twilio_account_sid">Twilio Account SID:</label>
+            <input type="text" id="id_twilio_account_sid" name="twilio_account_sid" required>
+
+            <label for="id_twilio_auth_token">Twilio Auth Token:</label>
+            <input type="text" id="id_twilio_auth_token" name="twilio_auth_token" required>
+
+            <label for="id_twilio_phone_number">Twilio Phone Number:</label>
+            <input type="text" id="id_twilio_phone_number" name="twilio_phone_number" required>
+
+            <label for="id_local_phone_number">Local Phone Number:</label>
+            <input type="text" id="id_local_phone_number" name="local_phone_number" value="+910000000000" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
